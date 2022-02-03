@@ -1,0 +1,32 @@
+pipeline {
+    agent any // where to execute
+     
+    stages { // this is where the work happens
+        stage("run frontend") {
+            steps {
+                echo 'executing yarn....'
+                nodejs('Node') { // name of installation is required. This is configured in Jenkins. This is a wrapper of Node.
+                
+                sh 'yarn install' // use yarn to install
+            }
+        }
+        
+        }
+        
+        
+        stage("run backend") {
+            steps {
+                echo 'executing gradle...'
+                withGradle() {
+                sh './gradlew -v'
+                }
+              
+                
+        }
+        
+        }
+        
+       
+       
+        }
+    }   
