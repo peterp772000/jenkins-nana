@@ -9,9 +9,7 @@ pipeline {
     stages { // this is where the work happens
         stage("init") {
             steps {
-                script {
-                   gv = load "script.groovy" 
-                }
+                echo 'this is the init step'
             }
         }
         stage("build") {
