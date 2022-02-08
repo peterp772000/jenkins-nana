@@ -5,7 +5,9 @@ pipeline {
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '') // name, choice, description
         booleanParam(name: 'executeTests', defaultValue: true, description: '') // name, defaultValue, description
     }
-    }
+    
+
+
     stages {
        
         stage("build") {
@@ -13,6 +15,7 @@ pipeline {
                   echo "building the application"
             }
         }
+        
         stage("test") {
             when {
                 expression {
