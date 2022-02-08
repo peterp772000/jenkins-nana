@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                 
+                 echo 'this is the init step'
             }
         }
         stage("build") {
